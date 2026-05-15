@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    Modern Expert Dark Theme Overrides
    ========================================================================== */
 
@@ -421,7 +421,7 @@ main {
 }
 
 .card-reveal ul li:before {
-  content: "▹";
+  content: "â–¹";
   position: absolute;
   left: 0;
   color: var(--accent-cyan);
@@ -564,5 +564,50 @@ blockquote {
   .intro-content h5 {
     font-size: 1.1rem;
   }
-}: : s e l e c t i o n   {   b a c k g r o u n d :   v a r ( - - a c c e n t - c y a n ) ;   c o l o r :   # f f f ;   }  
- 
+}
+
+/* Contact Form Styling */
+.contact-form .input-field input,
+.contact-form .input-field textarea {
+  color: var(--text-primary);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-form .input-field input:focus,
+.contact-form .input-field textarea:focus {
+  border-bottom: 2px solid var(--accent-cyan);
+  box-shadow: 0 1px 0 0 var(--accent-cyan);
+}
+
+.contact-form .input-field label {
+  color: var(--text-secondary);
+}
+
+.contact-form .input-field input:focus+label,
+.contact-form .input-field textarea:focus+label {
+  color: var(--accent-cyan) !important;
+}
+
+.contact-card {
+  padding: 15px;
+}
+
+.contact-info-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 40px !important;
+}
+
+@media (max-width: 992px) {
+  .contact-info-col {
+    padding-left: 15px !important;
+    margin-top: 40px;
+  }
+}
+
+/* Text Selection */
+::selection {
+  background: var(--accent-cyan);
+  color: #ffffff;
+}
