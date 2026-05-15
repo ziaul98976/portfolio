@@ -1,4 +1,4 @@
-<!-- <!DOCTYPE html> -->
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -20,6 +20,12 @@
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
   <!-- Custom Styles-->
   <link rel="stylesheet" href="/portfolio/assets/css/style.css" />
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <!-- Google Fonts: Outfit and Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
   <title>Ziaul Mustafa | Web Developer</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -43,12 +49,10 @@
   <meta property="og:image" content="https://ziaul98976.github.io/portfolio/examples/preview.JPG" />
   <!-- Twitter -->
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:site" content="@zia-ul-alig" />
   <meta name="twitter:title" content="Coder | Technofreak | Explorer | Minimalist | Humane" />
   <meta name="twitter:description" content="Software Developer" />
-  <meta name="twitter:url" content="https://x.com/zia-ul-alig" />
   <meta name="author" content="Ziaul Mustafa" />
-  <meta name="description" content="Software Developer with a passion for backend development and artificial intelligence." />
+  <meta name="description" content="Software Developer with expertise in frontend development, React.js, Spring Boot, and building scalable web applications." />
   <link rel="apple-touch-icon" sizes="57x57" href="/portfolio/assets/img/favicon/apple-icon-57x57.png" />
   <link rel="apple-touch-icon" sizes="60x60" href="/portfolio/assets/img/favicon/apple-icon-60x60.png" />
   <link rel="apple-touch-icon" sizes="72x72" href="/portfolio/assets/img/favicon/apple-icon-72x72.png" />
@@ -80,16 +84,17 @@
   
   <!-- Navigation Menu-->
   <!-- Nav class 1 -->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
+  <aside class="hide-on-small-only desktop-sidebar">
+    
+    <!-- Profile Section -->
+    <div class="sidebar-profile">
+      <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro" class="grey-blue-text">
+        <img src="/portfolio/assets/img/profilepic.jpg" class="circle img-responsive profile-pic" alt="avatar">
+      </a>
+    </div>
 
-      <li class="logo">
-        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
-          <img src="/portfolio/assets/img/profilepic.jpg" class="circle img-responsive profile-pic" alt="avatar">
-        </a>
-      </li>
-
+    <!-- Links Section -->
+    <ul class="side-nav-restyled section table-of-contents">
       <li class="bold">
         <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
             class="mdi-social-person small"></i><span>About</span></a>
@@ -99,60 +104,29 @@
           class="waves-effect waves-dark teal-text"><i
             class="mdi-action-trending-up small"></i><span>Experience</span></a>
       </li>
-
       <li class="bold">
-        <!-- mdi-av-web small
-             mdi-av-my-library-books small-->
         <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
             class="mdi-av-my-library-books small"></i><span>Projects</span></a>
       </li>
-
       <li class="bold">
-        <!--
-        ICONS:
-        mdi-action-assessment
-        mdi-social-poll
-        mdi-av-equalizer
-        -->
         <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
             class="mdi-action-assessment small"></i><span>Skills</span></a>
       </li>
-      
       <li class="bold">
-        <!--
-        ICONS:
-        -->
         <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
             class="mdi-social-school small"></i><span>Education</span></a>
       </li>
-
       <li class="bold">
-        <!-- 
-        1. mdi-communication-contacts
-        2. mdi-content-mail
-        3. mdi-communication-email
-        -->
         <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
             class="mdi-content-mail small"></i><span>Contact</span></a>
       </li>
-
       <li class="bold">
-        <!--
-        ICONS:
-        1. mdi-action-description
-        2. mdi-file-folder
-        3. mdi-file-folder-open
-        4. mdi-file-attachment
-        5. mdi-file-folder-shared
-        -->
-        <!-- <a aria-label="Open Varad's resume in a new tab" href="#resume" target="_blank"
-          onclick="window.open('https://drive.google.com/file/d/1vYi-bMyIsZPve0x_clxY8xsDtiHiOMd3/view?usp=sharing')"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a> -->
-        <a aria-label="Open Ziaul's resume in a new tab" href="https://ziaul98976.github.io/portfolio/assets/resume/Ziaulcvlatex.pdf" target="_blank"
+        <a aria-label="Open Ziaul's resume in a new tab" href="https://ziaul98976.github.io/portfolio/assets/resume/ziaul_mustafa_800626555.pdf" target="_blank"
         class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>  
       </li>
     </ul>
-  </nav>
+
+  </aside>
 
   <!-- Nav class 2 -->
   <nav class="hide-on-large only trigger z-depth-1">
@@ -206,13 +180,12 @@
     <section id="intro" class="section scrollspy full-height">
       <div class="overlay"></div>
       <div class="container">
-        <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
+        <div class="col-md-9" data-aos="fade-up">
+          <div class="content section-padding valign intro-content">
             <div class="caption">
               <h2>Hi, I'm <span class="teal">Ziaul Mustafa.</span></h2>
-              <h5 style="color:#fff">A <span class="typing" style="font-weight: 300; color:#004d40"></span></h5>
-              <!-- <h5 style="color:#00796b">A <span class="typing" style="font-weight: 300; color:#fff"></span></h5> -->
-              <h5>Self-driven, quick starter, passionate programmer with a curious mind who enjoys solving a complex and challenging real-world problems.</h5>
+              <h5 class="intro-role">A <span class="typing"></span></h5>
+              <h5>Self-driven, detail-oriented developer with a passion for building scalable web applications and solving complex real-world problems.</h5>
             </div>
             <div class="social">
               <a href="http://linkedin.com/in/ziaul-mustafa-" target="_blank">
@@ -239,8 +212,8 @@
 
     <!-- Second Section: About -->
     <section id="about" class="section scrollspy">
-      <h3 class="page-title white-text teal">About</h3>
-      <div class="container flow-text">
+      <h3 class="page-title white-text teal" data-aos="fade-right">About</h3>
+      <div class="container flow-text" data-aos="fade-up">
         <!-- <blockquote>
           <h2>
             A Software Developer with a passion for Backend Development and Artificial Intelligence.
@@ -248,19 +221,18 @@
           </h2>
         </blockquote> -->        
         <p>
-          I am a Computer Science Grad Student at Aligarh Muslim University. I enjoy problem-solving and coding. Always strive to bring 100% to the work I do.
+          I am a Master of Computer Applications student at Aligarh Muslim University, currently working as a Frontend Developer Intern at AAA2 Innovate Pvt. Ltd., Noida. I enjoy problem-solving and coding, and always strive to bring 100% to the work I do.
 
-          I have worked on technologies like MySQL, HTML5, CSS, JavaScript, Java & SpringBoot during my bachelor's. I have 3 months of professional work experience which helped me strengthen my experience in Web Development.
-          I am passionate about developing complex applications that solve real-world problems impacting millions of users.
+          I have hands-on experience building schema-driven no-code website builders, AI-powered Chrome extensions, and responsive client websites. I am passionate about developing complex applications that solve real-world problems.
         </p>
         <p>
           <ul>
-            <li><b>Languages:</b> Java,Python, JavaScript,  C++, HTML/CSS </li>
-            <li><b>Databases:</b> MySQL, Oracle, MongoDB</li>            
-            <li><b>Framework & Libraries:</b> React, SpringBoot, Bootstrap</li>
-            <li><b>Tools & Technologies:</b> Git, Github, Postman,</li>
+            <li><b>Languages:</b> Java, Python, SQL, JavaScript</li>
+            <li><b>Frontend:</b> React.js, Bootstrap, Tailwind</li>
+            <li><b>Backend:</b> Spring Boot, Rest APIs</li>
+            <li><b>Databases:</b> MySQL, Oracle</li>
+            <li><b>Tools:</b> Git, Postman, Jira</li>
           </ul>
-          
         </p>
           
         <!-- <p>
@@ -287,20 +259,56 @@
 
     <!-- Third Section: Experience -->
     <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal">Experience</h3>
+      <h3 class="page-title white-text teal" data-aos="fade-right">Experience</h3>
       <div class="container">
 
+        <!-- Experience 1: AAA2 Innovate -->
+        <div class="card" data-aos="fade-up">
+          <div class="card-content">
+            <div class="row">
+              <div class="col s12 m2">
+                <img alt="AAA2 Innovate Logo"
+                    src="/portfolio/assets/img/AAA2_logo.png" class="responsive-img center-block" />
+              </div>
+              <div class="col s12 m10">
+                <p>
+                  <span class="card-title"><a href="#experience"
+                      class="teal-text hoverline">AAA2 Innovate Pvt. Ltd.</a></span>
+                </p>
+              </div>
+            </div>
+            <div class="role brown-text text-darken-2">Frontend Developer Intern</div>
+            <ul>
+              <li>
+                Engineered a schema-driven no-code website builder enabling dynamic page rendering and reducing manual layout effort through drag-and-drop component composition.
+              </li>
+              <li>
+                Designed a node-based page schema to represent UI structure, enabling reusable component composition and hierarchical layout management.
+              </li>
+              <li>
+                Architected and implemented core editor systems including a canvas rendering engine, inspector panel, layout controls, and component registry.
+              </li>
+              <li>
+                Built a modular and extensible architecture supporting scalable component addition and real-time visual updates within the editor.
+              </li>
+              <li>
+                <b>Tools:</b> React.js, JavaScript, Tailwind
+              </li>
+            </ul>
+          </div>
+          <div class="card-action">
+            <span>Jan 2026 - Present | Noida, India</span>
+          </div>
+        </div>
 
-        <!-- Latest Experience -->
-
- <div class="card">
+        <!-- Experience 2: The BrandsWay -->
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
           <div class="card-content">
             <div class="row">
               <div class="col s12 m2">
                 <a href="https://thebrandsway.com/" target="_blank"><img alt="BrandsWay logo"
-                    src="/portfolio/assets/img/exp-meditab-logo-500x500.jpg" class="responsive-img center-block" /></a>
+                    src="/portfolio/assets/img/brandsway-logo.png" class="responsive-img center-block" /></a>
               </div>
-              <!-- <div class="col s12 m10"> -->
               <div class="col s12 m10">
                 <p>
                   <span class="card-title"><a href="https://thebrandsway.com/" target="_blank"
@@ -311,147 +319,216 @@
             <div class="role brown-text text-darken-2">Web Developer Intern</div>
             <ul>
               <li>
-                Customized a tree-based optimization algorithm that separates drugs into distinct groups to maximize the concurrent execution of drug
-dispenser robots; improved an optimization algorithm that reduced the cycle-time of the automation process by 25%.
+                Developed and deployed responsive client websites using HTML, CSS, JavaScript, Bootstrap, and PHP for clients including The PlayPlace International School and Yasir Ali Classes.
               </li>
               <li>
-                Devised a customized recursion algorithm to extend the functionality of the current environment to a multi-robot and multi-system
-environment
+                Optimized performance and SEO, improving page load speed, mobile responsiveness, and cross-browser compatibility.
               </li>
               <li>
-                Built a modular video analytics app using Flask, OpenCV that tracks the location of each human in a multi-camera environment;
-utilized perspective transformation, object detection, and object tracking to find the location of a human.
-              </li>
-              <li>Increased the speed of the video analytics app by 20% by using a customized YOLOv3 algorithm to perform object detection and
-                DeepSORT algorithm for multi-object tracking.</li>
-              <li>
-                <b>Tools:</b> HTML/CSS, JavaScript, PHP & Bootstrap
+                <b>Tools:</b> HTML/CSS, JavaScript, Bootstrap, PHP
               </li>
             </ul>
           </div>
           <div class="card-action">
-            <span>June 2025 - present | Aligarh, India</span>
+            <span>June 2025 - Aug 2025 | Aligarh, India</span>
           </div>
         </div>
 
-<!-- ..........................experience 2 .....................-->
-        <div class="card">
+        <!-- Experience 3: ILIZIEN -->
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
           <div class="card-content">
             <div class="row">
               <div class="col s12 m2">
                 <a href="https://ilizien.com/" target="_blank"><img alt="ILIZIEN Logo"
                     src="/portfolio/assets/img/LogoIlizien.webp" class="responsive-img center-block" /></a>
               </div>
-              <!-- <div class="col s12 m10"> -->
               <div class="col s12 m10">
                 <p>
                   <span class="card-title"><a href="https://ilizien.com/" target="_blank"
-                      class="teal-text hoverline">ILIZIEN</a></span>
+                      class="teal-text hoverline">Ilizien Pvt. Ltd.</a></span>
                 </p>
               </div>
             </div>
-            <div class="role brown-text text-darken-2">Web Development And Testing Intern</div>
+            <div class="role brown-text text-darken-2">Web Development & Testing Intern</div>
             <ul>
               <li>
-                Developed and managed the backend of an e-commerce platform using Flask, MongoDB, and AWS.
+                Improved UI responsiveness and accessibility by identifying and resolving frontend issues.
               </li>
               <li>
-                Worked on three web applications targeting customers, selling vendors, and admin users; built 50+ RESTful APIs with functionalities
-such as login/sign up, view a product, add a product to cart, checkout the order, etc.
+                Conducted functional and API testing, ensuring reliability of web features and tracking issues using Jira.
               </li>
-              <li>Improved the response time by 20% by refactoring the codebase and changing database design and queries.</li>
-              <li>Added a bulk upload feature which reduced the manual work of adding products into a database.</li>
               <li>
-                <b>Tools:</b> Chrome DevTools, CSS, JavaScript
+                <b>Tools:</b> Chrome DevTools, CSS, JavaScript, Jira
               </li>
             </ul>
           </div>
           <div class="card-action">
-            <span>02 September 2024 -31 September 2024 | Delhi, India</span>
+            <span>Sept 2024 | Delhi, India</span>
           </div>
         </div>
 
-        
-       
-
-        <!-- Experience 3 -->
-        <div class="card">
+        <!-- Experience 4: Computer Science Society -->
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
           <div class="card-content">
             <div class="row">
               <div class="col s12 m2">
                 <img alt="CSS logo" src="/portfolio/assets/img/CSS logo.jpg" class="responsive-img center-block" />
-
               </div>
-
-              <!-- <div class="col s12 m10"> -->
               <div class="col s12 m10">
                 <p>
-                  <span class="card-title"><a href="#experience" class="teal-text hoverline">Computer Science Society</a></span>
+                  <span class="card-title"><a href="#experience" class="teal-text hoverline">Computer Science Society, AMU</a></span>
                 </p>
               </div>
             </div>
             <div class="role brown-text text-darken-2">Web & Tech Lead</div>
             <ul>
               <li>
-                Programmed a cloud-based web app using Flask and JavaScript aimed at storing, visualizing, and tracking temperature and humidity
-of each drug container to estimate the degradation of the drug.
+                Led the technical team of the Computer Science Society, AMU.
               </li>
               <li>
-                Created an alert system to send notifications and emails when the parameters exceed the threshold.
+                ICECI Coordinator — Organized a 3-day International Conference on Emerging Computational Intelligence.
               </li>
               <li>
-                <b>Tools:</b> CSS, JavaScript, Github, PythonAnywhere, Netlify
+                <b>Duration:</b> 2023 - 2024 | Aligarh, India
               </li>
             </ul>
           </div>
           <div class="card-action">
-            <span>July 2023 - June 2024 | Aligarh, India</span>
+            <span>2023 - 2024 | Aligarh, India</span>
           </div>
         </div>
-
-       
 
       </div>
     </section>
 
     <!-- Fourth Section: Projects -->
     <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text teal">Projects</h3>
+      <h3 class="page-title white-text teal" data-aos="fade-right">Projects</h3>
       <div class="container">
         <div class="row">
 
-          <div class="col s12 m6 l4">
+          <!-- Project 1: AI-Powered Email Reply Generator -->
+          <div class="col s12 m6 l6" data-aos="zoom-in">
             <div class="card medium">
               <div class="card-image waves-effect waves-block waves-light">
-                <img alt="music streaming app" src="/portfolio/assets/img/project-music-player.png" style="height: 100%; width: 100%" class="activator" />
+                <img alt="AI Email Reply Generator" src="/portfolio/assets/img/project-email-ai.png" style="height: 100%; width: 100%" class="activator" />
               </div>
               <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Music Player Web-App<i
+                <span class="card-title activator teal-text hoverline">AI-Powered Email Reply Generator<i
                     class="mdi-navigation-more-vert right"></i></span>
                 <p>
-                  A music streaming web app based on Django
+                  A full-stack AI email assistant using Spring Boot and a Chrome Extension for Gmail.
                 </p>
               </div>
               <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
+                <span class="card-title teal-text"><small>Details</small><i
                     class="mdi-navigation-close right"></i></span>
                 <ul>
-                  <li><b>Tools:</b> Django, HTML, CSS, Bootstrap, SQLite, AWS S3, Heroku</li>
-                  <li>Register/login to the web app(with OAuth-based Google Sign-In).</li>
-                  <li>Search and filter songs based on language and singer.</li>
-                  <li>Create multiple playlists and add/remove songs to/from playlist.</li>
-                  <li>Scroll through recently played/viewed songs.</li>
-
-
+                  <li><b>Tools:</b> Spring Boot, Java, JavaScript, Chrome Extension, Gemini API</li>
+                  <li>Engineered a full-stack AI email assistant using Spring Boot and a Chrome Extension to generate contextual replies directly within Gmail.</li>
+                  <li>Designed and implemented REST APIs to handle asynchronous communication between the extension and backend, integrating the Gemini API for real-time response generation.</li>
+                  <li>Developed content scripts and DOM parsing logic to dynamically extract email context from Gmail's interface and inject AI-generated responses into the compose window.</li>
+                  <li>Handled dynamic DOM updates and event-driven rendering within Gmail, ensuring reliable response injection across changing UI states.</li>
                 </ul>
                 <div class="card-action">
-                  <a aria-label="Visit " href="https://galvanic-music.herokuapp.com/" target="_blank" data-position="top"
+                  <a aria-label="Visit the GitHub repo for AI Email Reply Generator project" href="https://github.com/ziaul98976/EmailReplyGeneratorAI"
+                    target="_blank" data-position="top" data-tooltip="View Source"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Event Management System -->
+          <div class="col s12 m6 l6" data-aos="zoom-in" data-aos-delay="100">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img alt="Event Management System" src="/portfolio/assets/img/project-event-mgmt.png" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">Event Management System<i
+                    class="mdi-navigation-more-vert right"></i></span>
+                <p>
+                  A comprehensive event management system for scheduling, organizing, and managing events.
+                </p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title teal-text"><small>Details</small><i
+                    class="mdi-navigation-close right"></i></span>
+                <ul>
+                  <li><b>Tools:</b> Java, JavaScript, CSS</li>
+                  <li>Developed a backend and frontend system for managing event scheduling, registrations, and user interactions.</li>
+                  <li>Implemented core features to organize events seamlessly with a responsive user interface.</li>
+                </ul>
+                <div class="card-action">
+                  <a aria-label="Visit the GitHub repo for Event Management System project" href="https://github.com/ziaul98976/event-management-system"
+                    target="_blank" data-position="top" data-tooltip="View Source"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Recruitment Management System -->
+          <div class="col s12 m6 l6" data-aos="zoom-in" data-aos-delay="200">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img alt="Recruitment Management System" src="/portfolio/assets/img/project-recruitment.png" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">Recruitment Management System<i
+                    class="mdi-navigation-more-vert right"></i></span>
+                <p>
+                  A backend system designed for managing recruitment processes and tracking candidates.
+                </p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title teal-text"><small>Details</small><i
+                    class="mdi-navigation-close right"></i></span>
+                <ul>
+                  <li><b>Tools:</b> Java</li>
+                  <li>Built a robust backend architecture for streamlining hiring workflows, candidate tracking, and application processing.</li>
+                  <li>Designed efficient data models to support recruitment management logic.</li>
+                </ul>
+                <div class="card-action">
+                  <a aria-label="Visit the GitHub repo for Recruitment Management System project" href="https://github.com/ziaul98976/RecruitmentManagementApplication"
+                    target="_blank" data-position="top" data-tooltip="View Source"
+                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                      class="fa fa-github"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: PlaySchool Website -->
+          <div class="col s12 m6 l6" data-aos="zoom-in" data-aos-delay="300">
+            <div class="card medium">
+              <div class="card-image waves-effect waves-block waves-light">
+                <img alt="PlaySchool Website" src="/portfolio/assets/img/project-playschool.png" style="height: 100%; width: 100%" class="activator" />
+              </div>
+              <div class="card-content">
+                <span class="card-title activator teal-text hoverline">PlaySchool Website<i
+                    class="mdi-navigation-more-vert right"></i></span>
+                <p>
+                  Official website of Play Place International School — a dynamic and child-centric preschool.
+                </p>
+              </div>
+              <div class="card-reveal">
+                <span class="card-title teal-text"><small>Details</small><i
+                    class="mdi-navigation-close right"></i></span>
+                <ul>
+                  <li><b>Tools:</b> HTML, CSS, JavaScript</li>
+                  <li>Developed a dynamic and responsive website focused on nurturing creativity, care, and early learning.</li>
+                  <li>Created visually appealing, child-centric designs to attract parents and showcase the preschool's facilities.</li>
+                </ul>
+                <div class="card-action">
+                  <a aria-label="Visit the live PlaySchool Website" href="https://ziaul98976.github.io/PlaySchoolWebsite/" target="_blank" data-position="top"
                     data-tooltip="View Online"
                     class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
                       class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/varadbhogayata/music-player"
+                  <a aria-label="Visit the GitHub repo for PlaySchool Website project" href="https://github.com/ziaul98976/PlaySchoolWebsite"
                     target="_blank" data-position="top" data-tooltip="View Source"
                     class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
                       class="fa fa-github"></i></a>
@@ -460,424 +537,112 @@ of each drug container to estimate the degradation of the drug.
             </div>
           </div>
 
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="quiz app" src="/portfolio/assets/img/project-quizup-logo-1.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Quiz Web-App<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A quiz playing web app based on Django
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> Django, HTML, CSS, Bootstrap, SQLite, Heroku</li>
-                  <li>Register/login to the web app(with OAuth-based Google Sign-In).</li>
-                  <li>Play Quiz and see the leaderboard</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://quiz-up-app.herokuapp.com/" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/varadbhogayata/QuizUp"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 1. Django Project -->
-          <!-- <div class="col s12 m6 l6">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="django web app" src="/assets/img/project-library-logo.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Local Library Web-App<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A web-app that creates an online catalog for a small local library, where users can browse available books and manage their accounts.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> HTML, CSS, Bootstrap, SQLite, Django, Heroku</li>
-                  <li>Users can view list and detail information for books and authors.</li>
-                  <li>Admin users can create and manage models.</li>
-                  <li>Librarians can renew reserved books.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit " href="https://django-local-lib.herokuapp.com" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/varadbhogayata/django-local-library"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div> -->
-
-          <!-- Flask Project -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of web app" src="/portfolio/assets/img/project-blog-logo.jpg"
-                style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Blog Web-App<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A simple and extensible blog web-app based on Flask.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Tools:</b> HTML, CSS, Bootstrap, Flask, SQLAlchemy, Postgresql, Python</li>
-                  <li>Users can view posts and contact the admin via Contact Page.</li>
-                  <li>Admin can Add, Delete, Update posts.</li>
-
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit Blog website" href="https://flask-heroku-blog.herokuapp.com/" target="_blank" data-position="top"
-                    data-tooltip="View Online"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-external-link"></i></a>
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/varadbhogayata/flask-blog"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- VQA -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/portfolio/assets/img/project-aim_bert-bias.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Visual Question Answering<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  An attention-based classification model that aims at generating an answer for a given input image.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title teal-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>Incorporated Convolution Neural Networks (CNN) for extracting image features and Long Short Term
-                    Memory for extracting question
-                    embeddings.</li>
-                  <li>Tested the model on the COCO dataset, abstract scenes images, and got 69% overall accuracy on the
-                    VQA evaluation metric.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project"
-                    href="https://github.com/varadbhogayata/visual-question-answering" target="_blank"
-                    data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Video Summarizer -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/portfolio/assets/img/computer-vision-v2-04.png" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Video Summarizer<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A Seq2Seq model that generates a short summary of the given input video.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title brown-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>Incorporated CNN to detect and classify objects in the video frames and Long Short Term Memory for
-                    generating a summary.</li>
-                  <li>Evaluated the model on MSVD (Microsoft Video Description Corpus) dataset; achieved 0.77, 0.71,
-                    0.52 scores respectively on ROGUE,
-                    BLEU, METEOR evaluation metrics.</li>
-
-                </ul>
-                <!-- TODO: UPLOAD THIS PROJECT ON GITHUB -->
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/ziaul98976/"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Image Generator -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/portfolio/assets/img/gan.jpg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Image Generator<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  An image generator based on the concept of adversarial networks (GANs)
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title brown-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>Developed system was tested on a human-face database and loss was calculated by comparing the PCAs
-                    of generated and original image.</li>
-                  <li>Calculated difference in PCA was less than 10%, depicting the successful generation of an image by
-                    the generator.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project" href="https://github.com/varadbhogayata/"
-                    target="_blank" data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Head Counting System -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Screenshot of  web app" src="/portfolio/assets/img/Blog-Images-Forget-Machine-Learning-Humans-Still-Have-a-Lot-to-Learn-Part-II.jpg" style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Head Counting System<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>
-                  A system that calculates the attendance of the class from a panoramic image of a live classroom.
-                </p>
-              </div>
-              <div class="card-reveal">
-                <!-- TODO: change this -- only close button -->
-                <!-- <span class="card-title brown-text">Accomplishments<i class="mdi-navigation-close right"></i></span> -->
-                <span class="card-title brown-text"><small>Accomplishments</small><i
-                    class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li>Used Singular Value Decomposition for image compression; applied various image processing
-                    techniques and morphological operations to
-                    detect the number of heads.</li>
-
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit the GitHub repo for  project"
-                    href="https://github.com/varadbhogayata/visual-question-answering" target="_blank"
-                    data-position="top" data-tooltip="View Source"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-                      class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- ************* -->
         </div>
       </div>
     </section>
 
     <!-- Fifth Section: Skills -->
     <section id="skills" class="section scrollspy">
-      <h3 class="page-title white-text teal">Skills</h3>
+      <h3 class="page-title white-text teal" data-aos="fade-right">Skills</h3>
       <div class="container">
-        <!-- Languages and Databases -->
-        <div class="card">
+        <!-- Languages -->
+        <div class="card" data-aos="fade-up">
           <div class="card-content">
-            <h4 class="brown-text light">Languages and Databases</h4>
+            <h4 class="brown-text light">Languages</h4>
             <div class="row text-center">
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/python-logo-1-300x300.jpg" class="responsive-img" />Python
+                <img alt="Java" src="/portfolio/assets/img/java-logo.svg" class="responsive-img" />Java
               </div>
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/html5-300x300.jpg" class="responsive-img" />HTML5
+                <img alt="Python" src="/portfolio/assets/img/python-logo.svg" class="responsive-img" />Python
               </div>
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/css3-300x300.jpg" class="responsive-img" />CSS3
+                <img alt="SQL" src="/portfolio/assets/img/sql-logo.svg" class="responsive-img" />SQL
               </div>
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/mysql-logo-1-300x300.jpg" class="responsive-img" />MySQL
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/postgresql-logo.png" class="responsive-img" />PostgreSQL
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/shell-logo-1-300x300.jpg" class="responsive-img" />Shell Scripting
+                <img alt="JavaScript" src="/portfolio/assets/img/javascript-logo.svg" class="responsive-img" />JavaScript
               </div>
             </div>
           </div>
         </div>
 
-        <div class="card">
+        <!-- Frontend & Backend -->
+        <div class="card" data-aos="fade-up" data-aos-delay="100">
           <div class="card-content">
-            <h4 class="brown-text light">Libraries</h4>
+            <h4 class="brown-text light">Frontend & Backend</h4>
             <div class="row text-center">
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/numpy-logo-1-500x500.jpg" class="responsive-img" />NumPy
+                <img alt="React.js" src="/portfolio/assets/img/react-logo.svg" class="responsive-img" />React.js
               </div>
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/pandas-logo-2-500x500.jpg" class="responsive-img" />Pandas
+                <img alt="Bootstrap" src="/portfolio/assets/img/bootstrap.png" class="responsive-img" />Bootstrap
               </div>
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/opencv-logo-1-500x500.jpg" class="responsive-img" />OpenCV
+                <img alt="Tailwind" src="/portfolio/assets/img/tailwind-logo.svg" class="responsive-img" />Tailwind
               </div>
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/sk-learn-logo-1-500x500.jpg" class="responsive-img" />scikit-learn
+                <img alt="Spring Boot" src="/portfolio/assets/img/springboot-logo.svg" class="responsive-img" />Spring Boot
               </div>
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/matplotlib-logo-1-500x500.jpg" class="responsive-img" />matplotlib
+                <img alt="REST APIs" src="/portfolio/assets/img/restapi-logo.svg" class="responsive-img" />REST APIs
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Frameworks -->
-        <div class="card">
+        <!-- Databases -->
+        <div class="card" data-aos="fade-up" data-aos-delay="200">
           <div class="card-content">
-            <h4 class="brown-text light">Frameworks</h4>
+            <h4 class="brown-text light">Databases</h4>
             <div class="row text-center">
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/django-logo.webp" class="responsive-img" />Django
+                <img alt="MySQL" src="/portfolio/assets/img/mysql-logo-1-300x300.jpg" class="responsive-img" />MySQL
               </div>
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/flask-logo.png" class="responsive-img" />Flask
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/bootstrap.png" class="responsive-img" />Bootstrap
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/keras-logo.png" class="responsive-img" />Keras
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/tensorflow-logo-1.png" class="responsive-img" />TensorFlow
-              </div>
-              <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/pytorch-logo.png" class="responsive-img" />PyTorch
+                <img alt="Oracle" src="/portfolio/assets/img/oracle-logo.svg" class="responsive-img" />Oracle
               </div>
             </div>
           </div>
         </div>
 
-        <!-- Other -->
-        <div class="card">
+        <!-- Tools -->
+        <div class="card" data-aos="fade-up" data-aos-delay="300">
           <div class="card-content">
-            <h4 class="brown-text light">Other</h4>
+            <h4 class="brown-text light">Tools</h4>
             <div class="row text-center">
-
-
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/git.png" class="responsive-img" />Git
+                <img alt="Git" src="/portfolio/assets/img/git.png" class="responsive-img" />Git
               </div>
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/aws.png" class="responsive-img" />AWS
+                <img alt="Postman" src="/portfolio/assets/img/postman-logo.svg" class="responsive-img" />Postman
               </div>
               <div class="col s4 m2">
-                <img alt="" src="/portfolio/assets/img/heroku.png" class="responsive-img" />Heroku
+                <img alt="Jira" src="/portfolio/assets/img/jira-logo.svg" class="responsive-img" />Jira
               </div>
             </div>
           </div>
         </div>
-
-        <!-- certifications -->
-        <!-- <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Certificates</h4>
-            <div class="row text-left">
-              <div class="container">
-                <div class="row">
-                  <div class="col s12 m6 l6">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="portfolio/assets/img/mooc-machine-learning-coursera-800x500.jpg">
-                      </div>
-                      <div class="card-content">
-                        <span class="card-title teal-text">Machine Learning (Stanford)</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col s12 m6 l6">
-                    <div class="card">
-                      <div class="card-image">
-                        <img src="/portfolio/assets/img/mooc-algorithms-stanford-2-800x500.jpg">
-                      </div>
-                      <div class="card-content">
-                        <span class="card-title teal-text">Algorithms (Stanford)</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div> -->
 
       </div>
     </section>
 
     <!-- Seventh Section: Education -->
     <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text teal">Education</h3>
+      <h3 class="page-title white-text teal" data-aos="fade-right">Education</h3>
       <div class="container">
         <div class="row">
-          <!-- Education -->
-          <div class="col s12 m6 l6">
+          <!-- Education 1: MCA -->
+          <div class="col s12 m6 l4" data-aos="flip-left">
             <div class="card">
               <div class="card-content">
                 <p>
-                  <span class="card-title"><a href="https://www.amu.ac.in/" target="_blank" class="teal-text hoverline">Arizona State University</a></span>
+                  <span class="card-title"><a href="https://www.amu.ac.in/" target="_blank" class="teal-text hoverline">Aligarh Muslim University</a></span>
                 </p>
-                <p class="brown-text">Aligarh, India</p>
+                <p class="brown-text">Aligarh, India | 2024 – 2026</p>
                 <p>
-                  <b>Degree: </b>Master of Computer Application      
+                  <b>Degree: </b>Master of Computer Applications
                   <br>
-                  <b>CGPA: </b>7.8/10
+                  <b>CGPA: </b>7.79/10 (till 1st sem)
                 </p>
 
                 <ul>
@@ -887,23 +652,22 @@ of each drug container to estimate the degradation of the drug.
                     <li>Database Systems</li>
                     <li>Object Oriented Programming</li>
                     <li>Foundations of Algorithms</li>
-                    <li>Computer Networks</li>                    
+                    <li>Computer Networks</li>
                   </ul>
                   </p>
-
                 </ul>
               </div>
             </div>
-
-            
           </div>
-          <div class="col s12 m6 l6">
+
+          <!-- Education 2: BSc -->
+          <div class="col s12 m6 l4" data-aos="flip-left" data-aos-delay="100">
             <div class="card">
               <div class="card-content">
                 <p>
                   <span class="card-title"><a href="https://www.amu.ac.in" target="_blank" class="teal-text hoverline">Aligarh Muslim University</a></span>
                 </p>
-                <p class="brown-text">Aligarh, India</p>
+                <p class="brown-text">Aligarh, India | 2021 – 2024</p>
                 <p>
                   <b>Degree: </b>Bachelor of Science (Computer Application)
                   <br>
@@ -917,15 +681,28 @@ of each drug container to estimate the degradation of the drug.
                     <li>Data Structures and Algorithms</li>
                     <li>Database Management Systems</li>
                     <li>Operating Systems</li>
-                    <li>Machine Learning</li>
-                    <li>Computer networks</li>
+                    <li>Computer Networks</li>
                     <li>Web Technologies</li>
-
-
                   </ul>
                   </p>
-
                 </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education 3: High School -->
+          <div class="col s12 m6 l4" data-aos="flip-left" data-aos-delay="200">
+            <div class="card">
+              <div class="card-content">
+                <p>
+                  <span class="card-title"><a href="#education" class="teal-text hoverline">AMU Schools</a></span>
+                </p>
+                <p class="brown-text">Aligarh, India | 2018 – 2020</p>
+                <p>
+                  <b>High School: </b>87%
+                  <br>
+                  <b>Intermediate: </b>70%
+                </p>
               </div>
             </div>
           </div>
@@ -935,66 +712,83 @@ of each drug container to estimate the degradation of the drug.
 
     <!-- Eight Section: Contact -->
     <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text teal">Contact</h3>
-      <div class="container">
-        <p>
-          <a aria-label="Call Varad" data-position="top" data-tooltip="Call Varad"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i><a
-              aria-label="Call zaiul">+91 8006626555</a></a>
-        </p>
-        <p>
-          <a aria-label="Email Varad" href="mailto:ziaul98976@gmail.com" target="_blank" data-position="top"
-            data-tooltip="Email Varad" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-envelope"></i><a aria-label="Email Varad" href="mailto:ziaul98976@gmail.com"
-              class="hoverline">ziaul98976@gmail.com</a></a>
-        </p>
-        <p>
-          <a aria-label="View Ziaul on GitHub" href="http://github.com/ziaul98976/" target="_blank"
-            data-position="top" data-tooltip="View Ziaul on GitHub"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i><a
-              aria-label="ziaul on Github" href="http://github.com/ziaul98976" class="hoverline"
-              target="_blank">github.com/ziaul98976</a></a>
-        </p>
-        <p>
-          <a aria-label="View Ziaul on LinkedIn" href="https://linkedin.com/in/ziaul-mustafa-/" target="_blank"
-            data-position="top" data-tooltip="View Ziaul on LinkedIn"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-linkedin"></i><a aria-label="Varad on LinkedIn" href="https://linkedin.com/in/ziaul-mustafa-/"
-              class="hoverline" target="_blank">linkedin.com/in/ziaul-mustafa-</a></a>
-        </p>
+      <h3 class="page-title white-text teal" data-aos="fade-right">Contact</h3>
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          
+          <!-- Contact Form -->
+          <div class="col s12 m6 l6">
+            <div class="card contact-card">
+              <div class="card-content">
+                <span class="card-title">Send a Message</span>
+                <form action="https://formspree.io/f/xdpabbvr" method="POST" class="contact-form">
+                  <div class="input-field">
+                    <input type="text" id="name" name="name" required>
+                    <label for="name">Your Name</label>
+                  </div>
+                  <div class="input-field">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Your Email</label>
+                  </div>
+                  <div class="input-field">
+                    <textarea id="message" name="message" class="materialize-textarea" required></textarea>
+                    <label for="message">Your Message</label>
+                  </div>
+                  <button type="submit" class="readme submit-btn">Send Message <i class="fa fa-paper-plane" style="margin-left: 8px;"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact Information -->
+          <div class="col s12 m6 l6 contact-info-col">
+            <div class="contact-links-wrapper">
+              <p style="display: flex; align-items: center; margin-bottom: 25px;">
+                <a aria-label="Call Ziaul" data-position="top" data-tooltip="Call Ziaul"
+                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i></a>
+                <span style="margin-left: 20px; font-size: 1.2rem; color: var(--text-secondary);">+91 8006626555</span>
+              </p>
+              <p style="display: flex; align-items: center; margin-bottom: 25px;">
+                <a aria-label="Email Ziaul" href="mailto:ziaul.mustafa800@gmail.com" target="_blank" data-position="top"
+                  data-tooltip="Email Ziaul" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                    class="fa fa-envelope"></i></a>
+                <a aria-label="Email Ziaul" href="mailto:ziaul.mustafa800@gmail.com" class="hoverline" style="margin-left: 20px; font-size: 1.2rem;">ziaul.mustafa800@gmail.com</a>
+              </p>
+              <p style="display: flex; align-items: center; margin-bottom: 25px;">
+                <a aria-label="View Ziaul on GitHub" href="http://github.com/ziaul98976/" target="_blank"
+                  data-position="top" data-tooltip="View Ziaul on GitHub"
+                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i></a>
+                <a aria-label="Ziaul on Github" href="http://github.com/ziaul98976" class="hoverline" target="_blank" style="margin-left: 20px; font-size: 1.2rem;">github.com/ziaul98976</a>
+              </p>
+              <p style="display: flex; align-items: center; margin-bottom: 25px;">
+                <a aria-label="View Ziaul on LinkedIn" href="https://linkedin.com/in/ziaul-mustafa-/" target="_blank"
+                  data-position="top" data-tooltip="View Ziaul on LinkedIn"
+                  class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
+                    class="fa fa-linkedin"></i></a>
+                <a aria-label="Ziaul on LinkedIn" href="https://linkedin.com/in/ziaul-mustafa-/" class="hoverline" target="_blank" style="margin-left: 20px; font-size: 1.2rem;">linkedin.com/in/ziaul-mustafa-</a>
+              </p>
+            </div>
+          </div>
+
+        </div>
       </div>
     </section>
   </main>
 
   <!-- typed.js -->
   <script src="/portfolio/assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing',{
-      strings: ["Developer", "Fast Learner"],
-      loop: true,
-      typeSpeed: 80,
-      backSpeed: 40
-    });
-  </script>
-
 
   <!-- jQuery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 
   <!-- Materialize - Compiled and minified JavaScript-->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
-  <script>
-    // Materialize - Initializers
-    $(document).ready(function () {
-      $(".scrollspy").scrollSpy()
-      // Initialize collapse button
-      $(".button-collapse").sideNav({
-        menuWidth: 190, // Default is 240
-        edge: "left", // Choose the horizontal origin
-        closeOnClick: true // Closes side-nav on <a> clicks, useful for Angular/Meteor
-      })
-    })
-  </script>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- Custom Scripts -->
+  <script src="/portfolio/assets/js/script.js"></script>
 </body>
 
 </html>
